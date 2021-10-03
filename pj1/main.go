@@ -24,6 +24,7 @@ func main() {
 		if r.Method == http.MethodPost {
 
 			r.ParseMultipartForm(0)
+			fmt.Printf("File information: %s\n", r.MultipartForm)
 		}
 	})
 }
