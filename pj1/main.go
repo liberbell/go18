@@ -29,6 +29,9 @@ func main() {
 
 			file, _, _ := r.FormFile("file")
 			bytes, _, := ioutil.ReadAll(file)
+
+			fmt.Printf("\n\nFile contents: %s\n", bytes)
 		}
+		http.ServeFile()
 	})
 }
