@@ -13,8 +13,8 @@ func main() {
 			fmt.Printf("First Name from Form: %s\n", r.Form("firstname"))
 			fmt.Printf("Last Name from Form: %s\n", r.Form("lastname"))
 
-			fmt.Printf("First Name from PostForm: %s\n", r.Form("firstname"))
-			fmt.Printf("Last Name from PostForm: %s\n", r.Form("lastname"))
+			fmt.Printf("First Name from PostForm: %s\n", r.PostForm("firstname"))
+			fmt.Printf("Last Name from PostForm: %s\n", r.PostForm("lastname"))
 		}
 	})
 }
