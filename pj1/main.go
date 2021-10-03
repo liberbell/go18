@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -27,6 +28,7 @@ func main() {
 			fmt.Printf("File information: %s\n", r.MultipartForm)
 
 			file, _, _ := r.FormFile("file")
+			bytes, _, _ := ioutil.ReadAll(file)
 		}
 	})
 }
