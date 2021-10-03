@@ -21,6 +21,9 @@ func main() {
 	})
 
 	http.HandleFunc("/file/", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == http.MethodPost
+		if r.Method == http.MethodPost {
+
+			r.ParseMultipartForm(0)
+		}
 	})
 }
