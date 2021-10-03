@@ -28,10 +28,11 @@ func main() {
 			fmt.Printf("File information: %s\n", r.MultipartForm)
 
 			file, _, _ := r.FormFile("file")
-			bytes, _, := ioutil.ReadAll(file)
+			bytes, _ := ioutil.ReadAll(file)
 
 			fmt.Printf("\n\nFile contents: %s\n", bytes)
 		}
 		http.ServeFile(w, r, "FileForm.html")
 	})
+	http.ListenAndServe(":8001", nil)
 }
