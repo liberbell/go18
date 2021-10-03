@@ -32,6 +32,6 @@ func main() {
 
 			fmt.Printf("\n\nFile contents: %s\n", bytes)
 		}
-		http.ServeFile()
+		http.ServeFile(w, r, "FileForm.html")
 	})
 }
