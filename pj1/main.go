@@ -25,6 +25,8 @@ func main() {
 
 			r.ParseMultipartForm(0)
 			fmt.Printf("File information: %s\n", r.MultipartForm)
+
+			file, _, _ := r.FormFile("file")
 		}
 	})
 }
