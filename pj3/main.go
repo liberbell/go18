@@ -10,4 +10,8 @@ func main() {
 	http.HandleFunc("/servererror/", func(rw http.ResponseWriter, r *http.Request) {
 		rw.WriteHeader(500)
 	})
+
+	http.HandleFunc("/customheader/", func(rw http.ResponseWriter, r *http.Request) {
+		rw.Header().Set("custom-header", "This is my custom header.")
+	})
 }
