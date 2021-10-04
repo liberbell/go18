@@ -1,5 +1,10 @@
 package main
 
+import (
+	"encoding/json"
+	"net/http"
+)
+
 type Person struct {
 	FirstName string
 	LastName  string
@@ -20,5 +25,8 @@ func (p *PersonJsonMarshaler) MarshalJSON() ([]byte, error) {
 }
 
 func main() {
-	a
+	http.HandleFunc("/json/default/", func(rw http.ResponseWriter, r *http.Request) {
+		j, _ := json.Marshal(&Person{FirstName: "Bob", LastName: "Smith"})
+		rw.Write(j)
+	})
 }
