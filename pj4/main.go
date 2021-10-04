@@ -38,4 +38,6 @@ func main() {
 	http.HandleFunc("/json/marshal/", func(rw http.ResponseWriter, r *http.Request) {
 		j, _ := json.Marshal(&PersonJsonMarshaler{FirstName: "Bob", LastName: "Smith"})
 	})
+
+	http.ListenAndServe(":8001", nil)
 }
