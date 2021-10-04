@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"io"
+	"net/http"
+)
 
 func main() {
 	http.HandleFunc("/notfound/", func(rw http.ResponseWriter, r *http.Request) {
@@ -13,5 +16,8 @@ func main() {
 
 	http.HandleFunc("/customheader/", func(rw http.ResponseWriter, r *http.Request) {
 		rw.Header().Set("custom-header", "This is my custom header.")
+		io.WriteString(rw, "Check out the custom header using F12.")
 	})
+
+	http.ListenAndServe(":8001", nil)
 }
