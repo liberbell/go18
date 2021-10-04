@@ -15,6 +15,10 @@ type PersonJsonMarshaler struct {
 	LastName  string
 }
 
+func (p *PersonJsonMarshaler) MarshalJSON() ([]byte, error) {
+	return []byte("{\"Name\":\"" + p.FirstName + " " + p.LastName + "\"}"), nil
+}
+
 func main() {
 	a
 }
