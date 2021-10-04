@@ -10,6 +10,11 @@ type PersonJsonField struct {
 	LastName  string `json:"lname"`
 }
 
+type PersonJsonMarshaler struct {
+	FirstName string
+	LastName  string
+}
+
 func main() {
 	a
 }
