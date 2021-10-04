@@ -5,6 +5,11 @@ type Person struct {
 	LastName  string
 }
 
+type PersonJsonField struct {
+	FirstName string `json:"fname"`
+	LastName  string `json:"lname"`
+}
+
 func main() {
 	a
 }
