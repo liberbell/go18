@@ -29,4 +29,8 @@ func main() {
 		j, _ := json.Marshal(&Person{FirstName: "Bob", LastName: "Smith"})
 		rw.Write(j)
 	})
+
+	http.HandleFunc("/json/fields/", func(rw http.ResponseWriter, r *http.Request) {
+		j, _ := json.Marshal(&PersonJsonField{FirstName: "Bob", LastName: "Smith"})
+	})
 }
