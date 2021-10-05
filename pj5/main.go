@@ -1,6 +1,10 @@
 package main
 
-import "github.com/julienschmidt/httprouter"
+import (
+	"text/template"
+
+	"github.com/julienschmidt/httprouter"
+)
 
 type Person struct {
 	FirstName string
@@ -12,6 +16,7 @@ func main() {
 
 	router := httprouter.New()
 	router.GET("/name/:firstname/:lastname", func(rw http.ResponseWriter, r *http.Request, p httprouter.Params ps httprouhttprouter.Param) {
-
+		t := template.New("NameTemplate")
+		tp, _ := t.Parse(tmp1)
 	})
 }
