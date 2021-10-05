@@ -18,5 +18,7 @@ func main() {
 	router.GET("/name/:firstname/:lastname", func(rw http.ResponseWriter, r *http.Request, p httprouter.Params ps httprouhttprouter.Param) {
 		t := template.New("NameTemplate")
 		tp, _ := t.Parse(tmp1)
+
+		tp.Execute(w, &Person{ps.ByName("FirstName"), ps.ByName("Lastname")})
 	})
 }
