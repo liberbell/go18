@@ -13,7 +13,7 @@ type Person struct {
 }
 
 func main() {
-	tmp1 := "<B><font color='green'>First Name: </font></B> {{.FirstName}} <BR> <B><font color='red'>Last Name: </font></B>"
+	tmp1 := "<B><font color='green'>First Name: </font></B> {{.FirstName}} <BR> <B><font color='red'>Last Name: </font></B> {{.LastName}}"
 
 	router := httprouter.New()
 	router.GET("/name/:firstname/:lastname", func(rw http.ResponseWriter, r *http.Request, ps httprouter.Params) {
