@@ -20,7 +20,7 @@ func main() {
 		t := template.New("NameTemplate")
 		tp, _ := t.Parse(tmp1)
 
-		tp.Execute(rw, &Person{ps.ByName("firstName"), ps.ByName("lastname")})
+		tp.Execute(rw, &Person{ps.ByName("firstName"), ps.ByName("lastName")})
 	})
 
 	http.ListenAndServe(":8001", router)
