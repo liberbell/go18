@@ -16,5 +16,9 @@ func main() {
 	http.HandleFunc("/shortlist/", func(rw http.ResponseWriter, r *http.Request) {
 
 		tp, _ := template.ParseFiles(templateFile)
+		people := []Person{
+			{"Bob", "Smith"},
+			{"Larry", "Flint"},
+		}
 	})
 }
