@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net/http"
 	"text/template"
 
 	"github.com/julienschmidt/httprouter"
@@ -21,4 +22,6 @@ func main() {
 
 		tp.Execute(w, &Person{ps.ByName("FirstName"), ps.ByName("Lastname")})
 	})
+
+	http.ListenAndServe(":8001", nil)
 }
