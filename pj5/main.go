@@ -6,5 +6,5 @@ type Person struct {
 }
 
 func main() {
-	tmp1 := "<B><font color='green'>First Name: </font>"
+	tmp1 := "<B><font color='green'>First Name: </font></B> {{.FirstName}} <BR> <B><font color='red'>Last Name: </font></B>"
 }
