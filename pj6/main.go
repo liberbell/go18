@@ -20,5 +20,7 @@ func main() {
 			{"Bob", "Smith"},
 			{"Larry", "Flint"},
 		}
+
+		tp.Execute(rw, people)
 	})
 }
