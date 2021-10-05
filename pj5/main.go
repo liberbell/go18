@@ -16,11 +16,11 @@ func main() {
 	tmp1 := "<B><font color='green'>First Name: </font></B> {{.FirstName}} <BR> <B><font color='red'>Last Name: </font></B>"
 
 	router := httprouter.New()
-	router.GET("/name/:firstname/:lastname", func(rw http.ResponseWriter, r *http.Request, p httprouter.Params ps httprouhttprouter.Param) {
+	router.GET("/name/:firstname/:lastname", func(rw http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		t := template.New("NameTemplate")
 		tp, _ := t.Parse(tmp1)
 
-		tp.Execute(w, &Person{ps.ByName("FirstName"), ps.ByName("Lastname")})
+		tp.Execute(rw, &Person{ps.ByName("FirstName"), ps.ByName("Lastname")})
 	})
 
 	http.ListenAndServe(":8001", nil)
