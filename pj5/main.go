@@ -23,5 +23,5 @@ func main() {
 		tp.Execute(rw, &Person{ps.ByName("firstName"), ps.ByName("lastname")})
 	})
 
-	http.ListenAndServe(":8001", nil)
+	http.ListenAndServe(":8001", router)
 }
