@@ -37,4 +37,12 @@ func main() {
 
 		tp.Execute(rw, people)
 	})
+
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+
+		tp, _ := template.ParseFiles()
+		tp.Execute(rw, nil)
+	})
+
+	http.ListenAndServe(":8001", nil)
 }
