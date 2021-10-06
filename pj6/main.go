@@ -11,7 +11,7 @@ type Person struct {
 }
 
 func main() {
-	templateFile := "personlist.html"
+	templateFile := ".personlist.html"
 
 	http.HandleFunc("/shortlist/", func(rw http.ResponseWriter, r *http.Request) {
 
