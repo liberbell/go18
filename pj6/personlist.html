@@ -35,10 +35,10 @@
                     <td><b>First Name</b></td>
                     <td><b>Last Name</b></td>
                 </tr>
-                {{range &person := . }}
+                {{range $person := . }}
                     <tr>
-                        <td>{{&person.FirstName}}</td>
-                        <td>{{&person.LastName}}</td>
+                        <td>{{$person.FirstName}}</td>
+                        <td>{{$person.LastName}}</td>
                     </tr>
                 {{end}}
             </table>
