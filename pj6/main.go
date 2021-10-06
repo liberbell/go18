@@ -40,7 +40,7 @@ func main() {
 
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 
-		tp, _ := template.ParseFiles()
+		tp, _ := template.ParseFiles(templateFile)
 		tp.Execute(rw, nil)
 	})
 
