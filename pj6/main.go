@@ -1,8 +1,8 @@
 package main
 
 import (
+	"html/template"
 	"net/http"
-	"text/template"
 )
 
 type Person struct {
@@ -11,7 +11,7 @@ type Person struct {
 }
 
 func main() {
-	templateFile := ".personlist.html"
+	templateFile := "personlist.tmpl"
 
 	http.HandleFunc("/shortlist/", func(rw http.ResponseWriter, r *http.Request) {
 
