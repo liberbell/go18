@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 )
 
@@ -12,4 +13,8 @@ func main() {
 	message := os.Args[2]
 
 	fmt.Println(args)
+
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		rw.Write([]byte(message))
+	})
 }
