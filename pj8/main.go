@@ -1,6 +1,9 @@
 package main
 
-import "flag"
+import (
+	"flag"
+	"net/http"
+)
 
 func main() {
 	var port, message string
@@ -10,4 +13,9 @@ func main() {
 
 	flag.Parse()
 
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		rw.Write([]byte(message))
+	})
+
+	http.ListenAndServe(":"+port, nil)
 }
