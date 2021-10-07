@@ -41,6 +41,11 @@
                         <td>{{$person.FirstName}}</td>
                         <td>{{$person.LastName}}</td>
                     </tr>
+                    {{if (eq $trclass "tr-even")}}
+                        {{$trclass = "tr-odd"}}
+                    {{else}}
+                        {{$trclass = "tr-even"}}
+                    {{end}}
                 {{end}}
             </table>
         {{else}}
