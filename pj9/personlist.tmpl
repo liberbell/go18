@@ -35,8 +35,9 @@
                     <td><b>First Name</b></td>
                     <td><b>Last Name</b></td>
                 </tr>
+                {{$trclass := "tr-odd"}} 
                 {{range $person := . }}
-                    <tr>
+                    <tr class='{{$trclass}}'>
                         <td>{{$person.FirstName}}</td>
                         <td>{{$person.LastName}}</td>
                     </tr>
