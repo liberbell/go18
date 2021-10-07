@@ -21,7 +21,7 @@ func main() {
 
 	http.HandleFunc("/longlist/", func(rw http.ResponseWriter, r *http.Request) {
 		tp, _ := template.ParseFiles(templateFile)
-		people := []Person{Person{"Bob", "Smith"}, Person{"Larry", "Flint"}, Person{"Susan", "Sarandon"}, Person{"Brad", "Pitt"}}
+		people := []Person{Person{"Bob", "Smith"}, Person{"Larry", "Flint"}, Person{"Susan", "Sarandon"}, Person{"Brad", "Pitt"}, Person{"Betty", "White"}}
 		tp.Execute(rw, people)
 	})
 }
