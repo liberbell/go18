@@ -44,6 +44,10 @@ func main() {
 			{"Bra   d", "P  itt"},
 			{"Bet  ty", "W  hi te"},
 		}
+
+		tp.Execute(rw, people)
 	})
+
+	http.ListenAndServe(":8001", nil)
 
 }
