@@ -2,6 +2,7 @@ package main
 
 import (
 	"html/template"
+	"net/http"
 	"strings"
 )
 
@@ -21,4 +22,8 @@ func main() {
 		"removeSpace": removeSpaces,
 		"capitalize":  strings.ToUpper,
 	}
+
+	http.HandleFunc("/shortlist", func(rw http.ResponseWriter, r *http.Request) {
+		tp, _ := template.New("personlist.tpl").Funcs(fmap).ParseFiles(templateFile)
+	})
 }
