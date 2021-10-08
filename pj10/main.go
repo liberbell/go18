@@ -23,7 +23,7 @@ func main() {
 		"capitalize":  strings.ToUpper,
 	}
 
-	http.HandleFunc("/shortlist", func(rw http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/shortlist/", func(rw http.ResponseWriter, r *http.Request) {
 		tp, _ := template.New("personlist.tpl").Funcs(fmap).ParseFiles(templateFile)
 
 		people := []Person{
@@ -34,7 +34,7 @@ func main() {
 		tp.Execute(rw, people)
 	})
 
-	http.HandleFunc("/longlist", func(rw http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/longlist/", func(rw http.ResponseWriter, r *http.Request) {
 		tp, _ := template.New("personlist.tpl").Funcs(fmap).ParseFiles(templateFile)
 
 		people := []Person{
