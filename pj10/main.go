@@ -12,5 +12,5 @@ func removeSpace(s string) string {
 }
 
 func main() {
-	a
+	templateFile := "personlist.tpl"
 }
