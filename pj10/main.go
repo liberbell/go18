@@ -30,5 +30,7 @@ func main() {
 			{"Bo b", "Sm i  th"},
 			{"La   rry", "F   lint"},
 		}
+
+		tp.Execute(rw, people)
 	})
 }
