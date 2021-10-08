@@ -33,4 +33,17 @@ func main() {
 
 		tp.Execute(rw, people)
 	})
+
+	http.HandleFunc("/longlist", func(rw http.ResponseWriter, r *http.Request) {
+		tp, _ := template.New("personlist.tpl").Funcs(fmap).ParseFiles(templateFile)
+
+		people := []Person{
+			{"Bo b", "Sm i  th"},
+			{"La   rry", "F   lint"},
+			{"Su san", "Sa ra  ndon"},
+			{"Bra   d", "P  itt"},
+			{"Bet  ty", "W  hi te"},
+		}
+	})
+
 }
