@@ -41,11 +41,11 @@
                     <td><b>First Name</b></td>
                     <td><b>Last Name</b></td>
                 </tr>
-                {{$trclass := "tr-odd"}} 
+                {{$trclass := "tr-even"}} 
                 {{range $person := . }}
                     <tr class='{{$trclass}}'>
-                        <td>{{$person.FirstName}}</td>
-                        <td>{{$person.LastName}}</td>
+                        <td>{{$person.FirstName|RemoveSpace|capitalize}}</td>
+                        <td>{{$person.LastName|RemoveSpace|capitalize}}</td>
                     </tr>
                     {{if (eq $trclass "tr-even")}}
                         {{$trclass = "tr-odd"}}
