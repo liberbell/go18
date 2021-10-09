@@ -17,11 +17,11 @@ func main() {
 		tp, _ := template.ParseFiles(templateFile)
 
 		people := []Person{
-			{"Bo b", "Sm i  th"},
-			{"La   rry", "F   lint"},
-			{"Su san", "Sa ra  ndon"},
-			{"Bra   d", "P  itt"},
-			{"Bet  ty", "W  hi te"},
+			{"Bob", "Smith"},
+			{"Larry", "Flint"},
+			{"Susan", "Sarandon"},
+			{"Brad", "Pitt"},
+			{"Betty", "White"},
 		}
 
 		tp.Execute(rw, people)
