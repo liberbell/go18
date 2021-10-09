@@ -40,6 +40,7 @@
                 <tr class="columnheader">
                     <td><b>First Name</b></td>
                     <td><b>Last Name</b></td>
+                    <td><b>Combine Name</b></td>
                 </tr>
                 {{$trclass := "tr-even"}} 
                 {{range $person := . }}
