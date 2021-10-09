@@ -46,8 +46,8 @@
                 {{range $person := . }}
                 {{$name := (printf "%s, %s" $person.LastName $person.FirstName)}}
                     <tr class='{{$trclass}}'>
-                        <td>{{$person.FirstName|removeSpace|capitalize}}</td>
-                        <td>{{$person.LastName|removeSpace|capitalize}}</td>
+                        <td>{{$person.FirstName}}</td>
+                        <td>{{$person.LastName}}</td>
                         <td>{{$name}}</td>
                     </tr>
                     {{if (eq $trclass "tr-even")}}
