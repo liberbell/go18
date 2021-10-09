@@ -26,4 +26,5 @@ func main() {
 
 		tp.Execute(rw, people)
 	})
+	http.ListenAndServe(":8001", nil)
 }
